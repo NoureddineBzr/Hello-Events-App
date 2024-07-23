@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af44e559-ce79-4f4a-9aad-a7a23444bfb7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/hello-events/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-events/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-events/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-events/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-events/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-events/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +30,21 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Hello-Events-App" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Hello-Events-App" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -55,6 +65,8 @@
       <workItem from="1721689319693" duration="15000" />
       <workItem from="1721689350880" duration="13000" />
       <workItem from="1721689376163" duration="131000" />
+      <workItem from="1721689700582" duration="14000" />
+      <workItem from="1721689725146" duration="21000" />
     </task>
     <servers />
   </component>
