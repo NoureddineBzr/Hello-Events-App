@@ -17,11 +17,11 @@ public class JwtAuth {
     public static final Key SECRET_KEY = Keys.secretKeyFor(SignatureAlgorithm.HS256);
 
     public static String generateToken(String username, Erole role) {
-        System.out.println("///////////////////"+username+"GENERATETOKEN JWTAUTH");
+        System.out.println("///////////////////"+username+"generate tokern");
         return Jwts.builder()
                 .subject(username)
                 .issuedAt(new Date(System.currentTimeMillis()))
-                .expiration(new Date(System.currentTimeMillis() + 24 * 60 * 60 * 1000)) // 24 hours
+                .expiration(new Date(System.currentTimeMillis() + 24 * 60 * 60 * 1000))
                 .claim("roles",role)
                 .signWith(SECRET_KEY)
                 .compact();
