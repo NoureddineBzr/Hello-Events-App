@@ -2,7 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af44e559-ce79-4f4a-9aad-a7a23444bfb7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-events/src/main/java/com/example/hello_events/HelloEventsApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-events/src/main/java/com/example/hello_events/config/JwtAuthenticationFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-events/src/main/java/com/example/hello_events/config/SecurityConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-events/src/main/java/com/example/hello_events/controller/AuthenticationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-events/src/main/java/com/example/hello_events/controller/AuthorizationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-events/src/main/java/com/example/hello_events/dao/request/SignUpRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-events/src/main/java/com/example/hello_events/dao/request/SigninRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-events/src/main/java/com/example/hello_events/dao/response/JwtAuthenticationResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-events/src/main/java/com/example/hello_events/entities/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-events/src/main/java/com/example/hello_events/entities/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-events/src/main/java/com/example/hello_events/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-events/src/main/java/com/example/hello_events/service/AuthenticationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-events/src/main/java/com/example/hello_events/service/JwtService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-events/src/main/java/com/example/hello_events/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-events/src/main/java/com/example/hello_events/service/impl/AuthenticationServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-events/src/main/java/com/example/hello_events/service/impl/JwtServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-events/src/main/java/com/example/hello_events/service/impl/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-events/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/hello-events/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-events/src/main/resources/application.yaml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +85,7 @@
       <workItem from="1721689376163" duration="131000" />
       <workItem from="1721689700582" duration="14000" />
       <workItem from="1721689725146" duration="21000" />
+      <workItem from="1722179765061" duration="10000" />
     </task>
     <servers />
   </component>
