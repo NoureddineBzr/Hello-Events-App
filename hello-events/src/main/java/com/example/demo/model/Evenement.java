@@ -41,6 +41,5 @@ public class Evenement {
     @OneToMany(mappedBy = "evenement")
     @JsonIgnore
     private List<Reservation> reservationList;
-//    @ManyToOne
-//    private User user;
+
 }

@@ -48,8 +48,6 @@ public class User implements UserDetails {
         this.age = age;
     }
 
-    //    @OneToMany
-//    private List<Evenement> evenementList;
     @Override
     public String getPassword() {
         return this.password;
@@ -62,7 +60,6 @@ public class User implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         if (role == null) {
-            // Handle the null case, possibly log an error or throw an exception
             System.out.println("Role is not initialized.");
             return List.of(); // or return an empty list or default role as needed
         }

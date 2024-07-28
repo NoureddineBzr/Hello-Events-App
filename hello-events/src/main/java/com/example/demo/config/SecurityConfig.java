@@ -31,7 +31,7 @@ public class SecurityConfig  {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        System.out.println("filtercjain///////////");
+        System.out.println("filter Chain");
 
         http
                 .csrf(csrf -> csrf.disable())
@@ -39,7 +39,7 @@ public class SecurityConfig  {
                         expressionInterceptUrlRegistry
 
                                 .requestMatchers("user/signup").permitAll()
-                                .requestMatchers("/login").permitAll() // Permettre l'accès à l'endpoint /login
+                                .requestMatchers("/login").permitAll()
 
                                 .requestMatchers("/admin/**").hasRole("ADMIN")
                                 .requestMatchers("/user/**").hasRole("USER")
