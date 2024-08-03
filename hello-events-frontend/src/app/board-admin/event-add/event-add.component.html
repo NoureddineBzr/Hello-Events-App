@@ -1,0 +1,38 @@
+<div class="container mt-3">
+  <h2>Add Event</h2>
+  <form (ngSubmit)="saveEvent()">
+    <div class="form-group">
+      <label for="titre">Title</label>
+      <input type="text" class="form-control" id="titre" [(ngModel)]="event.titre" name="titre" required>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" id="description" [(ngModel)]="event.description" name="description" required>
+    </div>
+    <div class="form-group">
+      <label for="lieu">Location</label>
+      <input type="text" class="form-control" id="lieu" [(ngModel)]="event.lieu" name="lieu" required>
+    </div>
+    <div class="form-group">
+      <label for="dateEvenement">Date</label>
+      <input type="date" class="form-control" id="dateEvenement" [(ngModel)]="event.dateEvenement" name="dateEvenement" required>
+    </div>
+    <div class="form-group">
+      <label for="prix">Price</label>
+      <input type="number" class="form-control" id="prix" [(ngModel)]="event.prix" name="prix" required>
+    </div>
+    <div class="form-group">
+      <label for="categorie">Category</label>
+      <input type="text" class="form-control" id="categorie" [(ngModel)]="event.categorie" name="categorie" required>
+    </div>
+    <div class="form-group">
+      <label for="heursEvenement">Time</label>
+      <input type="time" class="form-control" id="heursEvenement" [(ngModel)]="event.heursEvenement" name="heursEvenement" required>
+    </div>
+    <div class="form-group">
+      <label for="image">Image URL</label>
+      <input type="text" class="form-control" id="image" [(ngModel)]="event.image" name="image" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+</div>

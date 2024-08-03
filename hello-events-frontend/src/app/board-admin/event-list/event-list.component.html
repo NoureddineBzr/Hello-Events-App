@@ -1,0 +1,37 @@
+<div class="container mt-3">
+  <h2>Event List</h2>
+  <a routerLink="/admin/events/add" class="btn btn-primary mb-3">Add Event</a>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Location</th>
+        <th>Date</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Time</th>
+        <th>Image</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let event of events">
+        <td>{{ event.idEvenement }}</td>
+        <td>{{ event.titre }}</td>
+        <td>{{ event.description }}</td>
+        <td>{{ event.lieu }}</td>
+        <td>{{ event.dateEvenement }}</td>
+        <td>{{ event.prix }}</td>
+        <td>{{ event.categorie }}</td>
+        <td>{{ event.heursEvenement }}</td>
+        <td><img [src]="event.image" alt="Event Image" width="50"></td>
+        <td>
+          <a routerLink="/admin/events/edit/{{ event.idEvenement }}" class="btn btn-warning">Edit</a>
+          <button (click)="deleteEvent(event.idEvenement)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
