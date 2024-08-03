@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <header class="jumbotron text-center">
+    <h1 class="display-4">Welcome to Event Booking</h1>
+    <p class="lead">{{ content }}</p>
+    <hr class="my-4">
+    <p>Find and book events easily and quickly.</p>
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </header>
+
+  <div class="row">
+    <div class="col-md-4" *ngFor="let event of events">
+      <div class="card mb-4 shadow-sm">
+        <img [src]="event.image" class="card-img-top" [alt]="event.titre">
+        <div class="card-body">
+          <h5 class="card-title">{{ event.titre }}</h5>
+          <p class="card-text">{{ event.description }}</p>
+          <button (click)="bookEvent(event.idEvenement)" class="btn btn-primary">Book Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

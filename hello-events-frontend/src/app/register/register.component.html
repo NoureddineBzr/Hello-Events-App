@@ -1,0 +1,95 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2>Register</h2>
+      <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+        <!-- Username Field -->
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            name="username"
+            [(ngModel)]="form.username"
+            required
+            #username="ngModel"
+          />
+          <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+            <div *ngIf="username.errors?.['required']">Username is required.</div>
+          </div>
+        </div>
+
+        <!-- Email Field -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            [(ngModel)]="form.email"
+            required
+            email
+            #email="ngModel"
+          />
+          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+            <div *ngIf="email.errors?.['required']">Email is required.</div>
+            <div *ngIf="email.errors?.['email']">Invalid email format.</div>
+          </div>
+        </div>
+
+        <!-- Password Field -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            [(ngModel)]="form.password"
+            required
+            minlength="6"
+            #password="ngModel"
+          />
+          <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+            <div *ngIf="password.errors?.['required']">Password is required.</div>
+            <div *ngIf="password.errors?.['minlength']">Password must be at least 6 characters long.</div>
+          </div>
+        </div>
+
+        <!-- Age Field -->
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input
+            type="number"
+            class="form-control"
+            id="age"
+            name="age"
+            [(ngModel)]="form.age"
+            required
+            min="18"
+            #age="ngModel"
+          />
+          <div *ngIf="age.invalid && (age.dirty || age.touched)" class="alert alert-danger">
+            <div *ngIf="age.errors?.['required']">Age is required.</div>
+            <div *ngIf="age.errors?.['min']">You must be at least 18 years old.</div>
+          </div>
+        </div>
+
+        <!-- Server Error Message -->
+        <div *ngIf="isSignUpFailed" class="alert alert-danger" role="alert">
+          {{ errorMessage }}
+        </div>
+
+        <!-- Success Message -->
+        <div *ngIf="isSuccessful" class="alert alert-success mt-2" role="alert">
+          Registration successful!
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary mt-3" [disabled]="registerForm.invalid">Register</button>
+      </form>
+    </div>
+  </div>
+</div>
