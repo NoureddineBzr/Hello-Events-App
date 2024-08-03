@@ -1,5 +1,113 @@
-<div class="container">
-  <header class="jumbotron">
-    <p>{{ content }}</p>
-  </header>
+<div class="container mt-5">
+  <h2>Admin Dashboard</h2>
+
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <h3>Add Event</h3>
+      <form (submit)="addEvent()">
+        <div class="form-group">
+          <label for="titre">Title</label>
+          <input type="text" class="form-control" id="titre" [(ngModel)]="newEvent.titre" name="titre" required>
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input type="text" class="form-control" id="description" [(ngModel)]="newEvent.description" name="description" required>
+        </div>
+        <div class="form-group">
+          <label for="lieu">Location</label>
+          <input type="text" class="form-control" id="lieu" [(ngModel)]="newEvent.lieu" name="lieu" required>
+        </div>
+        <div class="form-group">
+          <label for="dateEvenement">Date</label>
+          <input type="date" class="form-control" id="dateEvenement" [(ngModel)]="newEvent.dateEvenement" name="dateEvenement" required>
+        </div>
+        <div class="form-group">
+          <label for="prix">Price</label>
+          <input type="number" class="form-control" id="prix" [(ngModel)]="newEvent.prix" name="prix" required>
+        </div>
+        <div class="form-group">
+          <label for="categorie">Category</label>
+          <input type="text" class="form-control" id="categorie" [(ngModel)]="newEvent.categorie" name="categorie" required>
+        </div>
+        <div class="form-group">
+          <label for="heursEvenement">Time</label>
+          <input type="time" class="form-control" id="heursEvenement" [(ngModel)]="newEvent.heursEvenement" name="heursEvenement" required>
+        </div>
+        <div class="form-group">
+          <label for="image">Image URL</label>
+          <input type="text" class="form-control" id="image" [(ngModel)]="newEvent.image" name="image" required>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Add Event</button>
+      </form>
+    </div>
+    <div class="col-md-6">
+      <h3>Edit Event</h3>
+      <form (submit)="updateEvent()">
+        <div class="form-group">
+          <label for="edit-titre">Title</label>
+          <input type="text" class="form-control" id="edit-titre" [(ngModel)]="selectedEvent.titre" name="edit-titre" required>
+        </div>
+        <div class="form-group">
+          <label for="edit-description">Description</label>
+          <input type="text" class="form-control" id="edit-description" [(ngModel)]="selectedEvent.description" name="edit-description" required>
+        </div>
+        <div class="form-group">
+          <label for="edit-lieu">Location</label>
+          <input type="text" class="form-control" id="edit-lieu" [(ngModel)]="selectedEvent.lieu" name="edit-lieu" required>
+        </div>
+        <div class="form-group">
+          <label for="edit-dateEvenement">Date</label>
+          <input type="date" class="form-control" id="edit-dateEvenement" [(ngModel)]="selectedEvent.dateEvenement" name="edit-dateEvenement" required>
+        </div>
+        <div class="form-group">
+          <label for="edit-prix">Price</label>
+          <input type="number" class="form-control" id="edit-prix" [(ngModel)]="selectedEvent.prix" name="edit-prix" required>
+        </div>
+        <div class="form-group">
+          <label for="edit-categorie">Category</label>
+          <input type="text" class="form-control" id="edit-categorie" [(ngModel)]="selectedEvent.categorie" name="edit-categorie" required>
+        </div>
+        <div class="form-group">
+          <label for="edit-heursEvenement">Time</label>
+          <input type="time" class="form-control" id="edit-heursEvenement" [(ngModel)]="selectedEvent.heursEvenement" name="edit-heursEvenement" required>
+        </div>
+        <div class="form-group">
+          <label for="edit-image">Image URL</label>
+          <input type="text" class="form-control" id="edit-image" [(ngModel)]="selectedEvent.image" name="edit-image" required>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Update Event</button>
+      </form>
+    </div>
+  </div>
+
+  <h3>Event List</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Location</th>
+        <th>Date</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Time</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let event of events">
+        <td>{{ event.titre }}</td>
+        <td>{{ event.description }}</td>
+        <td>{{ event.lieu }}</td>
+        <td>{{ event.dateEvenement }}</td>
+        <td>{{ event.prix }}</td>
+        <td>{{ event.categorie }}</td>
+        <td>{{ event.heursEvenement }}</td>
+        <td>
+          <button (click)="editEvent(event)" class="btn btn-warning btn-sm">Edit</button>
+          <button (click)="deleteEvent(event.idEvenement)" class="btn btn-danger btn-sm">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

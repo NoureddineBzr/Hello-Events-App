@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../services/user.service';
+import { EventService } from '../services/event.service';
 
 @Component({
   selector: 'app-board-admin',
@@ -7,22 +7,43 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./board-admin.component.css']
 })
 export class BoardAdminComponent implements OnInit {
-  content?: string;
+  events: any[] = [];
+  newEvent: any = {};
+  selectedEvent: any = {};
 
-  constructor(private userService: UserService) { }
+  constructor(private eventService: EventService) {}
 
   ngOnInit(): void {
-    this.userService.getAdminBoard().subscribe({
-      next: data => {
-        this.content = data;
-      },
-      error: err => {console.log(err)
-        if (err.error) {
-          this.content = JSON.parse(err.error).message;
-        } else {
-          this.content = "Error with status: " + err.status;
-        }
-      }
+    this.loadEvents();
+  }
+
+  loadEvents(): void {
+    this.eventService.getAllEvents().subscribe(data => {
+      this.events = data;
+    });
+  }
+
+  addEvent(): void {
+    this.eventService.createEvent(this.newEvent).subscribe(() => {
+      this.loadEvents();
+      this.newEvent = {}; // Reset the form
+    });
+  }
+
+  editEvent(event: any): void {
+    this.selectedEvent = { ...event };
+  }
+
+  updateEvent(): void {
+    this.eventService.updateEvent(this.selectedEvent.idEvenement, this.selectedEvent).subscribe(() => {
+      this.loadEvents();
+      this.selectedEvent = {}; // Reset the form
+    });
+  }
+
+  deleteEvent(id: number): void {
+    this.eventService.deleteEvent(id).subscribe(() => {
+      this.loadEvents();
     });
   }
 }

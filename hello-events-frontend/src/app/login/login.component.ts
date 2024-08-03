@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
       },
       error: err => {
         if (err.status === 403) {
-          this.errorMessage = 'Access denied. Please check your credentials.';
+          this.errorMessage = 'Incorrect username or password.';
         } else if (err.error && err.error.message) {
           this.errorMessage = err.error.message;
         } else {

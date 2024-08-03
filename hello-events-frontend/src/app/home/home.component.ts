@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../services/user.service';
+import { EventService } from '../services/event.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,22 +8,27 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  content?: string;
+  events: any[] = [];
+  content !: string;
 
-  constructor(private userService: UserService) { }
+  constructor(private eventService: EventService, private router: Router) { }
 
   ngOnInit(): void {
-    this.userService.getPublicContent().subscribe({
-      next: data => {
-        this.content = data;
-      },
-      error: err => {console.log(err)
-        if (err.error) {
-          this.content = JSON.parse(err.error).message;
-        } else {
-          this.content = "Error with status: " + err.status;
-        }
-      }
+    this.eventService.getAllEvents().subscribe(data => {
+      this.events = data;
     });
+  }
+
+  bookEvent(eventId: number): void {
+    // Check if the user is logged in
+    const isLoggedIn = !!localStorage.getItem('user'); // Adjust based on your auth logic
+
+    if (isLoggedIn) {
+      // Navigate to booking page (implement booking logic accordingly)
+      this.router.navigate(['/book-event', eventId]);
+    } else {
+      // Navigate to login page
+      this.router.navigate(['/login']);
+    }
   }
 }
